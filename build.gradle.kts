@@ -19,7 +19,7 @@ dependencies {
     runtimeOnly("org.flywaydb:flyway-core")
 
     testImplementation(platform("org.junit:junit-bom:5.8.2"))
-    implementation(platform("org.testcontainers:testcontainers-bom:1.16.3"))
+    testImplementation(platform("org.testcontainers:testcontainers-bom:1.16.3"))
     testImplementation("org.junit.jupiter:junit-jupiter-api")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine")
     testImplementation("org.springframework.boot:spring-boot-starter-test")
