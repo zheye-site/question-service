@@ -2,6 +2,7 @@ import org.springframework.boot.gradle.plugin.SpringBootPlugin
 
 plugins {
     java
+    checkstyle
     id("org.springframework.boot") version "2.6.4"
 }
 
@@ -31,6 +32,11 @@ java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(17))
     }
+}
+
+checkstyle {
+    maxWarnings = 0
+    toolVersion = "10.0"
 }
 
 tasks {
