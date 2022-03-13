@@ -7,3 +7,7 @@
 ### Gradle
 /.gradle
 /build
+
+### Environment Configuration
+application-*.yml
+!application-env.template.yml
