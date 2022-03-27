@@ -2,7 +2,7 @@ package com.zheye.question.domain.application;
 
 import com.zheye.question.domain.application.command.CreateQuestionCommand;
 import com.zheye.question.domain.application.result.QuestionCreatedResult;
-import com.zheye.question.domain.model.Question;
+import com.zheye.question.domain.model.entity.Question;
 import com.zheye.question.domain.repository.QuestionRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
