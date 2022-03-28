@@ -11,6 +11,7 @@ import java.util.Objects;
 import static com.zheye.question.domain.model.vo.QuestionUpdatedRecord.UpdateType.CREATED;
 import static com.zheye.question.domain.model.vo.QuestionUpdatedRecord.UpdateType.DETAIL_EDITED;
 import static com.zheye.question.domain.model.vo.QuestionUpdatedRecord.UpdateType.TITLE_EDITED;
+import static com.zheye.question.util.OffsetDateTimes.currentTime;
 
 @Embeddable
 public class QuestionUpdatedRecord {
@@ -28,15 +29,15 @@ public class QuestionUpdatedRecord {
     private String editedDetail;
 
     public static QuestionUpdatedRecord ofCreated(String updaterId, String createdTitle, String createdDetail) {
-        return new QuestionUpdatedRecord(CREATED, updaterId, OffsetDateTime.now(), null, createdTitle, createdDetail, null, null, null, null);
+        return new QuestionUpdatedRecord(CREATED, updaterId, currentTime(), null, createdTitle, createdDetail, null, null, null, null);
     }
 
     public static QuestionUpdatedRecord ofTitleEdited(String updaterId, String reason, String uneditedTitle, String editedTitle) {
-        return new QuestionUpdatedRecord(TITLE_EDITED, updaterId, OffsetDateTime.now(), reason, null, null, uneditedTitle, editedTitle, null, null);
+        return new QuestionUpdatedRecord(TITLE_EDITED, updaterId, currentTime(), reason, null, null, uneditedTitle, editedTitle, null, null);
     }
 
     public static QuestionUpdatedRecord ofDetailEdited(String updaterId, String reason, String uneditedDetail, String editedDetail) {
-        return new QuestionUpdatedRecord(DETAIL_EDITED, updaterId, OffsetDateTime.now(), reason, null, null, null, null, uneditedDetail, editedDetail);
+        return new QuestionUpdatedRecord(DETAIL_EDITED, updaterId, currentTime(), reason, null, null, null, null, uneditedDetail, editedDetail);
     }
 
     @PersistenceConstructor
